@@ -1,0 +1,1157 @@
+/* Import Lexend variable font */
+@font-face {
+    font-family: 'Lexend';
+    src: url('./font/Lexend-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Specify the range of weights available */
+    font-display: swap; /* Load font asynchronously */
+}
+
+/* CSS Variables for Themes */
+:root {
+    /* Light Theme Colors (Default) */
+    --bg-color: #f7fafc;
+    --bg-darker: #edf2f7;
+    --text-color: #2d3748;
+    --heading-color: #1a202c;
+    --link-color: #3182ce;
+    --link-hover-color: #2b6cb0;
+    --primary-button-bg: #3182ce;
+    --primary-button-text: white;
+    --primary-button-hover-bg: #2b6cb0;
+    --secondary-button-bg: transparent;
+    --secondary-button-text: #4a5568;
+    --secondary-button-border: #4a5568;
+    --secondary-button-hover-bg: #4a5568;
+    --secondary-button-hover-text: white;
+    --icon-color: #3182ce;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --price-color: #38a169;
+    --old-price-color: #718096;
+    --discount-badge-bg: #f6ad55;
+    --discount-badge-text: #2d3748;
+    --border-color: #e2e8f0;
+    --footer-text-color: #4a5568;
+    --footer-link-color: #4a5568;
+    --footer-link-hover-color: #2d3748;
+    --footer-bottom-text: #718096;
+    --social-icon-color: #4a5568;
+    --social-icon-hover-color: #2d3748;
+    --payment-icon-color: #4a5568;
+    --search-box-bg: #e2e8f0;
+    --search-input-color: #2d3748;
+    --search-input-placeholder: #4a5568;
+    --search-button-color: #4a5568;
+    --search-button-hover-color: #2d3748;
+    --cart-count-bg: #e53e3e;
+    --cart-count-text: white;
+    --location-text-color: #4a5568;
+    --location-dropdown-bg: #edf2f7;
+    --location-dropdown-border: #e2e8f0;
+    --location-dropdown-input-bg: #ffffff;
+    --location-dropdown-input-color: #2d3748;
+    --location-dropdown-input-border: #e2e8f0;
+    --location-dropdown-button-bg: #3182ce;
+    --location-dropdown-button-color: white;
+    --location-dropdown-button-hover-bg: #2b6cb0;
+     --faq-question-bg: #ffffff;
+    --faq-question-hover-bg: #edf2f7;
+    --faq-question-text: #4a5568;
+    --faq-answer-text: #4a5568;
+    --checkmark-icon-color: #38a169;
+    --hero-heading-color: #1a202c;
+    --hero-text-color: #4a5568;
+    --hero-image-shadow: rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme {
+    /* Dark Theme Colors */
+    --bg-color: #1a202c;
+    --bg-darker: #2d3748;
+    --text-color: #e2e8f0;
+    --heading-color: #a0aec0;
+    --link-color: #63b3ed;
+    --link-hover-color: #90cdf4;
+    --primary-button-bg: #63b3ed;
+    --primary-button-text: #1a202c;
+    --primary-button-hover-bg: #90cdf4;
+    --secondary-button-bg: transparent;
+    --secondary-button-text: #a0aec0;
+    --secondary-button-border: #a0aec0;
+    --secondary-button-hover-bg: #a0aec0;
+    --secondary-button-hover-text: #1a202c;
+    --icon-color: #63b3ed;
+    --card-bg: #1a202c;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --price-color: #68d391;
+    --old-price-color: #718096;
+    --discount-badge-bg: #f6e05e;
+    --discount-badge-text: #2d3748;
+    --border-color: #4a5568;
+    --footer-text-color: #a0aec0;
+    --footer-link-color: #a0aec0;
+    --footer-link-hover-color: #e2e8f0;
+    --footer-bottom-text: #718096;
+    --social-icon-color: #a0aec0;
+    --social-icon-hover-color: #e2e8f0;
+    --payment-icon-color: #a0aec0;
+    --search-box-bg: #4a5568;
+    --search-input-color: #e2e8f0;
+    --search-input-placeholder: #a0aec0;
+    --search-button-color: #e2e8f0;
+    --search-button-hover-color: #a0aec0;
+    --cart-count-bg: #f56565;
+    --cart-count-text: white;
+    --location-text-color: #a0aec0;
+    --location-dropdown-bg: #2d3748;
+    --location-dropdown-border: #4a5568;
+    --location-dropdown-input-bg: #1a202c;
+    --location-dropdown-input-color: #e2e8f0;
+    --location-dropdown-input-border: #4a5568;
+    --location-dropdown-button-bg: #63b3ed;
+    --location-dropdown-button-color: #1a202c;
+    --location-dropdown-button-hover-bg: #90cdf4;
+    --faq-question-bg: #1a202c;
+    --faq-question-hover-bg: #2d3748;
+    --faq-question-text: #a0aec0;
+    --faq-answer-text: #a0aec0;
+    --checkmark-icon-color: #68d391;
+    --hero-heading-color: #e2e8f0;
+    --hero-text-color: #a0aec0;
+    --hero-image-shadow: rgba(0, 0, 0, 0.3);
+}
+
+
+/* Custom Scrollbar Styles (for Webkit browsers like Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker); /* Color of the track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color); /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 3px solid var(--bg-darker); /* Add space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--footer-link-hover-color); /* Color when hovering over the thumb */
+}
+
+/* Basic Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color); /* Use CSS variable */
+    color: var(--text-color); /* Use CSS variable */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker); /* Use CSS variable */
+}
+
+h1, h2, h3 {
+    color: var(--heading-color); /* Use CSS variable */
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+a {
+    color: var(--link-color); /* Use CSS variable */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color); /* Use CSS variable */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-button-bg); /* Use CSS variable */
+    color: var(--primary-button-text); /* Use CSS variable */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-button-hover-bg); /* Use CSS variable */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-button-bg); /* Use CSS variable */
+    color: var(--secondary-button-text); /* Use CSS variable */
+    border: 2px solid var(--secondary-button-border); /* Use CSS variable */
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-button-hover-bg); /* Use CSS variable */
+    color: var(--secondary-button-hover-text); /* Use CSS variable */
+    border-color: var(--secondary-button-hover-bg); /* Match border color */
+}
+
+.btn-icon {
+    background-color: transparent;
+    color: var(--text-color); /* Use CSS variable */
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-icon:hover {
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.theme-toggle-btn {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--bg-darker); /* Use CSS variable */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.site-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color); /* Use CSS variable */
+    margin-right: 20px;
+}
+
+.navbar-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--location-text-color); /* Use CSS variable */
+    cursor: pointer;
+    position: relative; /* For dropdown positioning */
+    margin-right: 20px;
+}
+
+.location-dropdown-icon {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.navbar-location.active .location-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.location-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--location-dropdown-bg); /* Use CSS variable */
+    border: 1px solid var(--location-dropdown-border); /* Use CSS variable */
+    border-radius: 8px;
+    padding: 15px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-location.active .location-dropdown {
+    display: flex; /* Show when active */
+}
+
+.location-dropdown input {
+    padding: 8px;
+    border: 1px solid var(--location-dropdown-input-border); /* Use CSS variable */
+    border-radius: 4px;
+    background-color: var(--location-dropdown-input-bg); /* Use CSS variable */
+    color: var(--location-dropdown-input-color); /* Use CSS variable */
+}
+
+.location-dropdown input::placeholder {
+    color: var(--search-input-placeholder); /* Use CSS variable */
+}
+
+.location-dropdown button {
+    padding: 8px;
+    background-color: var(--location-dropdown-button-bg); /* Use CSS variable */
+    color: var(--location-dropdown-button-color); /* Use CSS variable */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.location-dropdown button:hover {
+    background-color: var(--location-dropdown-button-hover-bg); /* Use CSS variable */
+}
+
+
+.navbar-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-nav a {
+    color: var(--text-color); /* Use CSS variable */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.navbar-utility {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--search-box-bg); /* Use CSS variable */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px; /* Adjust width as needed */
+}
+
+.search-input {
+    border: none;
+    padding: 10px 15px;
+    background: none;
+    color: var(--search-input-color); /* Use CSS variable */
+    outline: none;
+    width: calc(100% - 40px); /* Adjust based on button width */
+}
+
+.search-input::placeholder {
+    color: var(--search-input-placeholder); /* Use CSS variable */
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--search-button-color); /* Use CSS variable */
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: var(--search-button-hover-color); /* Use CSS variable */
+}
+
+.cart-btn {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--cart-count-bg); /* Use CSS variable */
+    color: var(--cart-count-text); /* Use CSS variable */
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.navbar-toggler {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: var(--text-color); /* Use CSS variable */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/hero-placeholder.png') no-repeat center center/cover; /* Hero background */
+    color: var(--text-color); /* Use CSS variable */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.light-theme .hero-section {
+     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./images/hero-placeholder.png') no-repeat center center/cover; /* Light theme hero background */
+}
+
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--hero-heading-color); /* Use CSS variable */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--hero-text-color); /* Use CSS variable */
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--hero-image-shadow); /* Use CSS variable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 25px var(--hero-image-shadow);
+}
+
+
+/* Categories Section */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.category-box {
+    background-color: var(--bg-darker); /* Use CSS variable */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-color); /* Use CSS variable */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-box:hover {
+    background-color: var(--border-color); /* Use CSS variable */
+    transform: translateY(-5px);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--icon-color); /* Use CSS variable */
+    margin-bottom: 10px;
+}
+
+.category-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: var(--text-color); /* Use CSS variable */
+}
+
+
+/* Featured Products / Most Selling Sections - Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden; /* Hide items outside the view */
+    padding: 0 40px; /* Add padding for arrows */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+}
+
+.product-card {
+    /* Individual card styles (reused from previous version) */
+    background-color: var(--card-bg); /* Use CSS variable */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--card-shadow); /* Use CSS variable */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+    /* min-width adjusted in media queries for responsiveness */
+    margin: 0 15px; /* Space between cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.product-card:first-child {
+    margin-left: 0; /* Remove left margin for the first card */
+}
+
+.product-card:last-child {
+    margin-right: 0; /* Remove right margin for the last card */
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area without distortion */
+    border-top-left-radius: 8px; /* Rounded top corners */
+    border-top-right-radius: 8px;
+    transition: transform 0.3s ease; /* Image hover animation */
+}
+
+.product-card:hover img {
+     transform: scale(1.05);
+}
+
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: var(--footer-text-color); /* Use CSS variable */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow description to take space */
+}
+
+.product-price {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--price-color); /* Use CSS variable */
+}
+
+.old-price {
+    font-size: 0.9rem;
+    color: var(--old-price-color); /* Use CSS variable */
+    text-decoration: line-through;
+}
+
+.discount-badge {
+    background-color: var(--discount-badge-bg); /* Use CSS variable */
+    color: var(--discount-badge-text); /* Use CSS variable */
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    align-self: flex-start; /* Align badge to the start */
+}
+
+.product-card .btn {
+    align-self: flex-start; /* Align button to the start */
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 5; /* Above the cards */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-arrow.left {
+    left: 0;
+}
+
+.carousel-arrow.right {
+    right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color); /* Use CSS variable */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--icon-color); /* Use CSS variable */
+    transform: scale(1.2);
+}
+
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--card-bg); /* Use CSS variable */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--card-shadow); /* Use CSS variable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+}
+
+.feature-item:hover {
+     transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--icon-color); /* Use CSS variable */
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.feature-item p {
+    color: var(--footer-text-color); /* Use CSS variable */
+}
+
+
+/* Why Choose Us Section */
+.why-choose-us-section .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.why-choose-us-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.why-choose-us-content h2 {
+    text-align: left;
+}
+
+.why-choose-us-content p {
+    margin-bottom: 20px;
+    color: var(--footer-text-color); /* Use CSS variable */
+}
+
+.why-choose-us-content ul {
+    margin-bottom: 30px;
+}
+
+.why-choose-us-content ul li {
+    margin-bottom: 10px;
+    color: var(--text-color); /* Use CSS variable */
+}
+
+.why-choose-us-content ul li i {
+    color: var(--checkmark-icon-color); /* Use CSS variable */
+    margin-right: 10px;
+}
+
+.why-choose-us-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.why-choose-us-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--hero-image-shadow); /* Use CSS variable */
+     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+}
+
+.why-choose-us-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 25px var(--hero-image-shadow);
+}
+
+
+/* FAQ Section */
+.faq-items {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--faq-question-bg); /* Use CSS variable */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--faq-question-text); /* Use CSS variable */
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--faq-question-hover-bg); /* Use CSS variable */
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--faq-question-text); /* Use CSS variable */
+    flex-grow: 1; /* Allow text to take space */
+    margin-right: 10px; /* Space between text and icon */
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    color: var(--faq-answer-text); /* Use CSS variable */
+    display: none; /* Hidden by default */
+}
+
+.faq-item.active .faq-answer {
+    display: block; /* Show when active */
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg); /* Rotate plus to form a cross */
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--bg-darker); /* Use CSS variable */
+    color: var(--footer-text-color); /* Use CSS variable */
+    padding: 60px 0 20px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.footer-col ul {
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--footer-link-color); /* Use CSS variable */
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--footer-link-hover-color); /* Use CSS variable */
+}
+
+.footer .site-logo {
+     margin-bottom: 15px;
+     display: inline-block; /* To apply margin-bottom */
+}
+
+.footer-col p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--social-icon-color); /* Use CSS variable */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--social-icon-hover-color); /* Use CSS variable */
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-color); /* Use CSS variable */
+    border: 1px solid var(--border-color); /* Use CSS variable */
+}
+
+.newsletter-form input {
+    border: none;
+    padding: 12px 15px;
+    background: none;
+    color: var(--text-color); /* Use CSS variable */
+    outline: none;
+    flex-grow: 1;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--old-price-color); /* Use CSS variable */
+}
+
+.newsletter-form button {
+    background-color: var(--primary-button-bg); /* Use CSS variable */
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    color: var(--primary-button-text); /* Use CSS variable */
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--primary-button-hover-bg); /* Use CSS variable */
+}
+
+.payment-icons {
+    margin-top: 20px;
+    font-size: 2rem;
+    display: flex;
+    gap: 15px;
+    color: var(--payment-icon-color); /* Use CSS variable */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color); /* Use CSS variable */
+    font-size: 0.9rem;
+    color: var(--footer-bottom-text); /* Use CSS variable */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar-brand,
+    .navbar-location,
+    .navbar-utility {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .navbar-nav ul {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+     .search-box {
+        width: 100%;
+        max-width: 400px; /* Limit search box width */
+        margin: 0 auto;
+    }
+
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+     .why-choose-us-section .container {
+        flex-direction: column;
+    }
+
+    .why-choose-us-content h2 {
+        text-align: center;
+    }
+
+    .why-choose-us-content ul {
+        text-align: left; /* Keep list items left-aligned */
+        display: inline-block; /* Center the ul block */
+    }
+
+    .why-choose-us-image {
+        order: -1; /* Move image above content on smaller screens */
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+     .footer-col {
+        text-align: center;
+    }
+
+    .footer-col ul {
+        padding: 0;
+    }
+
+    .social-icons,
+    .payment-icons {
+        justify-content: center;
+    }
+
+    .newsletter-form {
+        max-width: 300px; /* Limit form width */
+        margin: 15px auto 0 auto;
+    }
+
+    /* Carousel adjustments for tablet */
+    .carousel-container {
+        padding: 0 20px; /* Adjust padding for arrows */
+    }
+
+    .product-card {
+        min-width: calc(50% - 20px); /* Show 2 cards with 20px gap */
+        margin: 0 10px;
+    }
+
+     .product-card:first-child {
+        margin-left: 0;
+    }
+
+    .product-card:last-child {
+        margin-right: 0;
+    }
+
+     .carousel-arrow {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 768px) {
+     .navbar-nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-utility {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .btn-icon .btn-text {
+        display: inline; /* Show text on smaller screens */
+    }
+
+    .search-box {
+         max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+     .category-grid,
+     .features-grid,
+     .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns on very small screens */
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .footer-col ul {
+        text-align: center;
+    }
+
+    /* Carousel adjustments for mobile */
+     .carousel-container {
+        padding: 0 10px; /* Adjust padding for arrows */
+    }
+
+    .product-card {
+        min-width: calc(100% - 10px); /* Show 1 card with 10px gap */
+        margin: 0 5px;
+    }
+
+    .product-card:first-child {
+        margin-left: 0;
+    }
+
+    .product-card:last-child {
+        margin-right: 0;
+    }
+
+     .carousel-arrow {
+        padding: 8px 6px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop Carousel Width Adjustment */
+@media (min-width: 1025px) {
+    .product-card {
+        /* Calculate width for 4 items with 30px gap (15px margin on each side) */
+        /* Total gap space = 3 * 30px = 90px */
+        /* Container width = 1200px (max-width) - 40px (padding) = 1160px */
+        /* Available space for cards = 1160px - 90px = 1070px */
+        /* Width per card = 1070px / 4 = 267.5px */
+        /* Add back the 15px margin on one side for calculation */
+        min-width: calc((100% / 4) - 30px); /* (100% / itemsPerView) - total_margin_per_item */
+        margin: 0 15px; /* Keep 15px margin on each side */
+    }
+
+     .product-card:first-child {
+        margin-left: 0; /* Remove left margin for the first card */
+    }
+
+    .product-card:last-child {
+        margin-right: 0; /* Remove right margin for the last card */
+    }
+
+}
+
